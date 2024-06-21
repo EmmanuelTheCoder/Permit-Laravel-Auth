@@ -111,8 +111,7 @@ class StudentController extends Controller
 
             $result = json_decode($response->getBody()->getContents(), true);
 
-            // Assuming the API returns a boolean 'allowed' field to indicate permission
-            return $result['allowed'] ?? false;
+            return $result
         } catch (\Exception $e) {
             return false;
         }
